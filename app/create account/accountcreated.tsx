@@ -1,5 +1,6 @@
 import { Image, Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import AccountGenerated from '@/components/AccountCreated/AccountGenerated'
 
 export default function accountcreated() {
   return (
@@ -8,6 +9,10 @@ export default function accountcreated() {
             <View style={styles.container}>
               <Image style={styles.icon} source={require('../../assets/images/account success.png')}/>
               <Text style={styles.title}>You’ve successfully created an account !</Text>
+            </View>
+            <View>
+                <AccountGenerated/>
+
             </View>
 
         </View>
@@ -36,7 +41,8 @@ const styles = StyleSheet.create({
 
     container:{
         alignItems: 'center',
-        marginTop:30
+        marginTop:70,
+        gap:50
 
 
     },

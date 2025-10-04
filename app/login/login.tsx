@@ -1,8 +1,8 @@
-import { Image, Platform, SafeAreaView, StatusBar, StyleSheet, Text, View, TouchableWithoutFeedback, Keyboard, Alert, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
 import CustomButton from '@/components/CustomButton/CustomButton'
-import { OtpInput } from 'react-native-otp-entry'
 import { useRouter } from 'expo-router'
+import React, { useState } from 'react'
+import { Alert, Image, Keyboard, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+import { OtpInput } from 'react-native-otp-entry'
 
 export default function Login() {
   const [pin, setPin] = useState('')
@@ -16,7 +16,7 @@ export default function Login() {
     // Validate PIN here
     console.log('Login with PIN:', pin)
     // Navigate to home or dashboard
-    // router.push('/home')
+    // router.push('')
   }
 
   const handleForgotPin = () => {

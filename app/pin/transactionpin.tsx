@@ -1,8 +1,8 @@
+import SmallButton from '@/components/CustomButton/SmallButton'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { Image, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View, Alert, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { Alert, Image, Keyboard, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import { OtpInput } from 'react-native-otp-entry'
-import SmallButton from '@/components/CustomButton/SmallButton'
 
 export default function Transactionpin() {
     const [transactionpin, setTransactionPin] = useState('')
@@ -29,7 +29,7 @@ export default function Transactionpin() {
         }
         // Navigate to next screen or save PIN
         console.log('PIN set successfully:', transactionpin)
-        router.push('/create account/accountcreated')
+        router.replace('/create account/accountcreated')
     }
 
     return (
