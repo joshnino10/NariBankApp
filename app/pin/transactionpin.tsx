@@ -15,11 +15,11 @@ export default function Transactionpin() {
     }
 
     const handleNext = () => {
-        if (transactionpin.length !== 6) {
+        if (transactionpin.length !== 4) {
             Alert.alert('Error', 'Please enter a 4-digit PIN')
             return
         }
-        if (confirmTransactionPin.length !== 6) {
+        if (confirmTransactionPin.length !== 4) {
             Alert.alert('Error', 'Please confirm your PIN')
             return
         }
@@ -29,7 +29,7 @@ export default function Transactionpin() {
         }
         // Navigate to next screen or save PIN
         console.log('PIN set successfully:', transactionpin)
-        // router.push('/next-screen')
+        router.push('/create account/accountcreated')
     }
 
     return (
@@ -51,8 +51,9 @@ export default function Transactionpin() {
                             <OtpInput
                                 numberOfDigits={4}
                                 onTextChange={setTransactionPin}
+                                value = {transactionpin}
                                 placeholder="•"
-                                value={transactionpin}
+                                secureTextEntry={true}
                                 theme={{
                                     containerStyle: styles.otpContainer,
                                     pinCodeContainerStyle: styles.pinCodeContainer,
@@ -65,8 +66,9 @@ export default function Transactionpin() {
                             <OtpInput
                                 numberOfDigits={4}
                                 onTextChange={setConfirmTransactionPin}
-                                 placeholder="•"
-                                value={confirmTransactionPin}
+                                placeholder="•"
+                                value = {confirmTransactionPin}
+                                secureTextEntry={true}
                                 theme={{
                                     containerStyle: styles.otpContainer,
                                     pinCodeContainerStyle: styles.pinCodeContainer,
@@ -78,10 +80,9 @@ export default function Transactionpin() {
 
                     <View style={styles.buttonContainer}>
                         <SmallButton onPress={handleNext} title='Next'/>
-                      
-                        
                     </View>
                     </View>
+
 
                 </View>
             </SafeAreaView>
@@ -118,17 +119,17 @@ const styles = StyleSheet.create({
     desc: {
         fontFamily: 'interregular',
         textAlign: 'center',
-        fontSize: 18,
-        color: '#000000',
+        fontSize: 16,
+        color: '#666',
         paddingHorizontal: 20
     },
     inputContainer: {
         marginTop: 40
     },
     label: {
-        fontSize: 18,
+        fontSize: 16,
         fontFamily: 'interregular',
-        fontWeight: '400',
+        fontWeight: '500',
         color: '#000000',
         marginBottom: 10,
         marginTop: 20
@@ -151,11 +152,8 @@ const styles = StyleSheet.create({
     focusStick: {
         backgroundColor: '#4361EE'
     },
-    buttonContainer:{
-        marginTop:30,
+    buttonContainer: {
+        marginTop: 30,
         alignItems: 'center'
-
-    },
-
-    
+    }
 })

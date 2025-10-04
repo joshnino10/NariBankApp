@@ -42,9 +42,9 @@ export default function Login() {
             <View style={styles.inputContainer}>
               <OtpInput
                 numberOfDigits={6}
+                value={pin}
                 onTextChange={setPin}
                  placeholder="•"
-                value={pin}
                 secureTextEntry={true}
                 theme={{
                   containerStyle: styles.otpContainer,

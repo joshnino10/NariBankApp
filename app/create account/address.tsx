@@ -43,9 +43,9 @@ import {
           behavior={Platform.OS === "ios" ? "padding" : undefined}
           keyboardVerticalOffset={Platform.OS === "ios" ? 20 : 0}
         >
-          {/* Page layout with form + button at bottom */}
+         
           <View style={styles.page}>
-            {/* Scrollable form */}
+            
             <ScrollView 
               contentContainerStyle={styles.scrollContent} 
               showsVerticalScrollIndicator={false}
