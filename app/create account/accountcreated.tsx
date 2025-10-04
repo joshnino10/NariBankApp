@@ -30,7 +30,7 @@ export default function accountcreated() {
                 style={[styles.icon, { transform: [{ translateY: bounceAnim }] }]} 
                 source={require('../../assets/images/account success.png')}
               />
-              <Text style={styles.title}>You've successfully created an account !</Text>
+              <Text style={styles.title}>You’ve successfully created an account !</Text>
             </View>
             <View>
                 <AccountGenerated/>

@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   Dimensions,
   FlatList,
@@ -46,6 +46,23 @@ export default function OnboardingScreen() {
   const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
   const flatListRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % slides.length;
+        
+        flatListRef.current?.scrollToIndex({
+          index: nextIndex,
+          animated: true,
+        });
+        
+        return nextIndex;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const goToLogin = () => {
     router.push("/login/login");
