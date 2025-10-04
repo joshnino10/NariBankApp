@@ -15,8 +15,9 @@ export default function Login() {
     }
     // Validate PIN here
     console.log('Login with PIN:', pin)
-    // Navigate to home or dashboard
-    // router.push('')
+    router.replace('/(tabs)/home')
+   
+  
   }
 
   const handleForgotPin = () => {
