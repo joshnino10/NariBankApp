@@ -90,7 +90,7 @@ export default function OnboardingScreen() {
 
   const renderItem = ({ item }) => (
     <View style={styles.slide}>
-      <Text style={styles.title}>{renderTextParts(item.title, styles.title)}</Text>
+      <Text style={styles.title} numberOfLines={2}>{renderTextParts(item.title, styles.title)}</Text>
       <Image source={item.image} style={styles.image} resizeMode="contain" />
       <Text style={styles.subtitle}>
         {renderTextParts(item.subtitle, styles.subtitle)}
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   title: {
-    fontSize: 28,
+    fontSize: 33,
     fontFamily: "intersemibold",
     textAlign: "center",
     fontWeight: "600",
