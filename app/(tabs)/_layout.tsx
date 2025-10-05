@@ -1,3 +1,4 @@
+import HomeHeader from "@/components/HomeComponents/HomeHeader";
 import { Tabs } from "expo-router";
 import React from "react";
 import { Image, Platform, } from "react-native";
@@ -38,6 +39,8 @@ export default function Tablayout() {
         name="home"
         options={{
           title: "Home",
+          headerShown: true,
+          header: ()=> <HomeHeader/>,
           tabBarIcon: ({ focused }) => (
             <Image
               source={
