@@ -1,4 +1,4 @@
-import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { Platform, SafeAreaView, StatusBar, StyleSheet,  } from 'react-native'
 import React from 'react'
 import AddingCard from '@/components/CardComponent/AddingCard'
 

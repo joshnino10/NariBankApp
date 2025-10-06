@@ -1,12 +1,18 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native'
 
 export default function Profile() {
   return (
-    <View>
+    <SafeAreaView style={styles.safearea}>
       <Text>profile</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  safearea:{
+    flex:1,
+    backgroundColor: "white",
+    paddingTop: Platform.OS === 'android'? StatusBar.currentHeight:0
+  },
+})
