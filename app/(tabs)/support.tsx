@@ -1,10 +1,10 @@
 import React from 'react'
-import { Platform, SafeAreaView, StatusBar, StyleSheet, Text } from 'react-native'
+import { Platform, SafeAreaView, StatusBar, StyleSheet,  } from 'react-native'
 
 export default function Support() {
   return (
     <SafeAreaView style={styles.safearea}>
-      <Text>support</Text>
+      
     </SafeAreaView>
   )
 }
