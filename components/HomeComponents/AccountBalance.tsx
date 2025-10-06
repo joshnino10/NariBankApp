@@ -14,7 +14,8 @@ import {
   import * as Clipboard from 'expo-clipboard';
   
   export default function AccountBalance() {
-    const Amount = "200.00";
+    
+    const Amount = "500,000.00";
     const AccountNumber = "0715334703";
     const AltAccountNumber = "9126794670";
     
@@ -81,8 +82,8 @@ import {
   
   const styles = StyleSheet.create({
     box: {
-      width: Platform.OS === "ios" ? 400 : 369,
-      height: 141,
+      width: Platform.OS === "ios" ? 410 : 396,
+      height: 145,
       backgroundColor: "#1A35BD",
       borderTopRightRadius: 15,
       borderBottomRightRadius: 15,
@@ -90,7 +91,7 @@ import {
   
     contentContainer: {
       paddingHorizontal: 16,
-      paddingVertical: 16,
+      paddingVertical: 20,
     },
   
     AvailableBalance: {

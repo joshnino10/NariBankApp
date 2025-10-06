@@ -82,6 +82,7 @@ export default function RootLayout() {
       <Stack.Screen name="loginpin" />
       <Stack.Screen name="transactionpin" />
       <Stack.Screen name="accountcreated" />
+      <Stack.Screen name="addcard" />
     </Stack>
     </GlobalProvider>
   );

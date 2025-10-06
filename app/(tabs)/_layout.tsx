@@ -1,3 +1,4 @@
+import CardHeader from "@/components/CardComponent/CardHeader";
 import HomeHeader from "@/components/HomeComponents/HomeHeader";
 import { Tabs } from "expo-router";
 import React from "react";
@@ -58,6 +59,8 @@ export default function Tablayout() {
         name="card"
         options={{
           title: "Card",
+          headerShown: true,
+          header: ()=> <CardHeader/>,
           tabBarIcon: ({ focused }) => (
             <Image
               source={

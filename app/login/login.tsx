@@ -136,7 +136,8 @@ const styles = StyleSheet.create({
   },
   forgotPinText: {
     fontSize: 16,
-    fontFamily: 'interregular',
+    fontWeight:'500',
+    fontFamily: 'intersemibold',
     color: '#1A35BD',
     justifyContent:'flex-end',
  
