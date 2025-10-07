@@ -1,6 +1,6 @@
 import { router } from 'expo-router'
 import React from 'react'
-import { Image, Platform, Pressable, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Platform, Pressable, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 export default function ProfileHeader() {
     const goBack = ()=> {
@@ -10,9 +10,7 @@ export default function ProfileHeader() {
     const AccountName = 'PETER SWIFT'
   return (
     <SafeAreaView style={styles.safearea}>
-        <StatusBar barStyle="light-content" backgroundColor="#1A35BD" />
         <View style={styles.content}>
-
          <View style={styles.header}>
             <TouchableOpacity onPress={goBack}>
                 <Image style={styles.icon} source={require('../../assets/images/arrowBackWhite.png')}/>
@@ -49,7 +47,7 @@ const styles = StyleSheet.create({
     safearea:{
         backgroundColor: '#1A35BD',
         paddingHorizontal:16,
-        paddingTop: Platform.OS === "android"? StatusBar.currentHeight:0
+        paddingTop: Platform.OS === "android" ? 10 : 0
 
 
     },
