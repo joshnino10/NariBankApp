@@ -1,14 +1,21 @@
+import { useRouter } from 'expo-router';
 import React from 'react';
 import { Image, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function HomeHeader() {
   const Name = 'PETER';
+
+  const router = useRouter()
+
+  const goToProfile = ()=>{
+    router.push('/(tabs)/profile')
+  }
   
   return (
     <SafeAreaView style={styles.container}> 
       <View style={styles.row}>
         <View style={styles.userSection}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={goToProfile}>
             <Image 
               style={styles.profileImage} 
               source={require('../../assets/images/headerimage.png')}
