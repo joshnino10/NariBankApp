@@ -46,7 +46,6 @@ export default function ProfileHeader() {
 const styles = StyleSheet.create({
     safearea:{
         backgroundColor: '#1A35BD',
-        paddingHorizontal:16,
         paddingTop: Platform.OS === "android" ? 10 : 0
 
 

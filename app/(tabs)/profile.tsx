@@ -4,6 +4,7 @@ import { Platform, SafeAreaView, StatusBar, StyleSheet,   } from 'react-native'
 export default function Profile() {
   return (
     <SafeAreaView style={styles.safearea}>
+      <StatusBar barStyle="light-content" backgroundColor="#1A35BD" />
       
     </SafeAreaView>
   )

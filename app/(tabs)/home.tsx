@@ -1,11 +1,11 @@
-import { Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet,} from 'react-native'
-import React from 'react'
 import AccountBalance from '@/components/HomeComponents/AccountBalance'
+import React from 'react'
+import { Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, } from 'react-native'
 
 export default function Home() {
   return (
     <SafeAreaView style={styles.safearea}>
-      <StatusBar barStyle="dark-content" backgroundColor="white"/>
+      <StatusBar barStyle="dark-content" backgroundColor="white" />
       <ScrollView>
         <AccountBalance/>
 
