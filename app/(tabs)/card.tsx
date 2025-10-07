@@ -6,6 +6,7 @@ import { Platform, SafeAreaView, StatusBar, StyleSheet } from 'react-native'
 export default function Card() {
   return (
     <SafeAreaView style={styles.safearea}>
+      <StatusBar barStyle="dark-content" />
       <LinkedCard/>
 
     </SafeAreaView>

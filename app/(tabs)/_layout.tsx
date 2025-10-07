@@ -1,5 +1,7 @@
 import CardHeader from "@/components/CardComponent/CardHeader";
 import HomeHeader from "@/components/HomeComponents/HomeHeader";
+import ProfileHeader from "@/components/ProfileComponent/ProfileHeader";
+import SupportHeader from "@/components/SupportComponents/SupportHeader";
 import { Tabs } from "expo-router";
 import React from "react";
 import { Image, Platform, } from "react-native";
@@ -77,6 +79,8 @@ export default function Tablayout() {
         name="support"
         options={{
           title: "Support",
+          headerShown: true,
+          header : ()=> <SupportHeader/>,
           tabBarIcon: ({ focused }) => (
             <Image
               source={
@@ -93,6 +97,8 @@ export default function Tablayout() {
         name="profile"
         options={{
           title: "Profile",
+          headerShown: true,
+          header: ()=> <ProfileHeader/>,
           tabBarIcon: ({ focused }) => (
             <Image
               source={

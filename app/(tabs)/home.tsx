@@ -5,6 +5,7 @@ import AccountBalance from '@/components/HomeComponents/AccountBalance'
 export default function Home() {
   return (
     <SafeAreaView style={styles.safearea}>
+      <StatusBar barStyle="dark-content" backgroundColor="white"/>
       <ScrollView>
         <AccountBalance/>
 
