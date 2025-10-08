@@ -162,8 +162,8 @@ const styles = StyleSheet.create({
   },
 
   sectionIcon: {
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30
   },
 
   sectionText: {
