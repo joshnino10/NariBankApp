@@ -169,6 +169,7 @@ const styles = StyleSheet.create({
   sectionText: {
     fontFamily: 'Inter-Medium',
     fontSize: 16,
+    fontWeight: '500',
     color: '#000000',
   },
 
