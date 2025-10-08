@@ -113,7 +113,7 @@ export default function SupportDetails() {
           </TouchableOpacity>
         ))}
 
-        {/* Social Media Section */}
+       
         <View style={styles.divider} />
         <Text style={styles.sectionTitle}>Our Socials</Text>
 
