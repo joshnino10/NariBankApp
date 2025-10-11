@@ -17,7 +17,6 @@ export default function SupportHeader() {
             </TouchableOpacity>
 
              <Text style={styles.text}>Support</Text>
-
             <View style={styles.icon}/>
         </View> 
     </SafeAreaView>
