@@ -19,9 +19,7 @@ export default function SupportHeader() {
              <Text style={styles.text}>Support</Text>
 
             <View style={styles.icon}/>
-
-        </View>
-      
+        </View> 
     </SafeAreaView>
   )
 }
