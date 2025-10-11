@@ -16,12 +16,12 @@ export default function AdditionalService() {
     {
       icon: require('../../assets/images/to nari icon.png'),
       text: 'To Nari',
-      route: '/tonari/tonari',
+      route: '/to nari/tonari',
     },
     {
       icon: require('../../assets/images/bank icon.png'),
       text: 'To Bank',
-      route: '/to-bank/bank'
+      route: '/to bank/bank'
     },
     {
       icon: require('../../assets/images/bills icon.png'),
@@ -48,11 +48,19 @@ export default function AdditionalService() {
       text: 'TV',
       route: '/tv/tv'
     },
+
     {
       icon: require('../../assets/images/kolo icon.png'),
       text: 'Kolo',
       route: '/kolo/kolo',
     },
+
+    {
+      icon: require('../../assets/images/kolo icon.png'),
+      text: 'Kolo',
+      route: '/kolo/kolo',
+    },
+  
   ]
 
   const displayedServices = showAll ? services : services.slice(0, 8)
@@ -83,7 +91,7 @@ export default function AdditionalService() {
         ))}
       </View>
 
-      {services.length > 8 && (
+      {services.length > 7 && (
         <TouchableOpacity 
           style={styles.showAllButton}
           onPress={() => setShowAll(!showAll)}
@@ -136,8 +144,8 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   icon: {
-    width: 32,
-    height: 32,
+    width: 24,
+    height: 24,
   },
   serviceText: {
     fontFamily: 'intermedium',
