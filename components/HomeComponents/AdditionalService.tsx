@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   serviceButton: {
-    width: '23%',
+    width: '22%',
     alignItems: 'center',
     marginBottom: 20,
   },
@@ -159,12 +159,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 8,
+   
   },
   showAllText: {
     fontFamily: 'intersemibold',
-    fontSize: 14,
-    color: '#4f46e5',
+    fontSize: 15,
+    color: '#1830AC',
     fontWeight: '600',
     marginRight: 6,
   },

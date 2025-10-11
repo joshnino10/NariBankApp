@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router'
 import React from 'react'
-import { Image, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 export default function CardHeader() {
     const router = useRouter()
@@ -10,6 +10,7 @@ export default function CardHeader() {
     }
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" />
         <View style={styles.content}>
             <TouchableOpacity onPress={goback}>
 

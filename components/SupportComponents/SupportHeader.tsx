@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router'
 import React from 'react'
-import { Image, Platform, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 export default function SupportHeader() {
     const router  = useRouter()
@@ -10,6 +10,7 @@ export default function SupportHeader() {
     }
   return (
     <SafeAreaView style={styles.container} >
+      <StatusBar barStyle="light-content"/>
         <View style={styles.content}>
             <TouchableOpacity onPress={goBack}>
              <Image style={styles.icon} source={require('../../assets/images/arrowBackWhite.png')}/>

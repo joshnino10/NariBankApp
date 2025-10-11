@@ -1,7 +1,7 @@
+import * as ImagePicker from 'expo-image-picker'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
-import { Image, Platform, Pressable, SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native'
-import * as ImagePicker from 'expo-image-picker'
+import { Alert, Image, Platform, Pressable, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 export default function ProfileHeader() {
   const [profileImage, setProfileImage] = useState(require('../../assets/images/bigProfileImage.png'))
@@ -36,6 +36,7 @@ export default function ProfileHeader() {
 
   return (
     <SafeAreaView style={styles.safearea}>
+        <StatusBar barStyle="light-content" />
       <View style={styles.content}>
         <View style={styles.header}>
           <TouchableOpacity 
