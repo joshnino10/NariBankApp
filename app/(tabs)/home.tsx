@@ -13,13 +13,7 @@ export default function Home() {
         <AdditionalService/>
         <SportDeals/>
 
-      </ScrollView>
-    
-     
-
-
-      
-     
+      </ScrollView>  
     </SafeAreaView>
   )
 }

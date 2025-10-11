@@ -1,19 +1,27 @@
 import { router } from 'expo-router'
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
 import { Feather } from '@expo/vector-icons'
 
+interface Service {
+  icon: any
+  text: string
+  route: string
+}
+
 export default function AdditionalService() {
-  const services = [
+  const [showAll, setShowAll] = useState(false)
+  
+  const services: Service[] = [
     {
       icon: require('../../assets/images/to nari icon.png'),
       text: 'To Nari',
-      route: '/to nari/tonari',
+      route: '/tonari/tonari',
     },
     {
       icon: require('../../assets/images/bank icon.png'),
       text: 'To Bank',
-      route: '/to bank/bank'
+      route: '/to-bank/bank'
     },
     {
       icon: require('../../assets/images/bills icon.png'),
@@ -22,13 +30,13 @@ export default function AdditionalService() {
     },
     {
       icon: require('../../assets/images/wallet icon.png'),
-      text: 'Int’l Wallet',
+      text: "Int'l\nWallet",
       route: '/wallet/wallet',
     },
     {
       icon: require('../../assets/images/mobile icon.png'),
-      text: 'Mobile Topup',
-      route: '/mobile Topup/topup',
+      text: 'Mobile\nTopup',
+      route: '/mobile-topup/topup',
     },
     {
       icon: require('../../assets/images/sports icon.png'),
@@ -47,6 +55,8 @@ export default function AdditionalService() {
     },
   ]
 
+  const displayedServices = showAll ? services : services.slice(0, 8)
+
   const handleServicePress = (route: string) => {
     router.push(route as any)
   }
@@ -54,7 +64,7 @@ export default function AdditionalService() {
   return (
     <View style={styles.container}>
       <View style={styles.gridContainer}>
-        {services.map((service, index) => (
+        {displayedServices.map((service, index) => (
           <TouchableOpacity
             key={index}
             style={styles.serviceButton}
@@ -73,13 +83,22 @@ export default function AdditionalService() {
         ))}
       </View>
 
-      <TouchableOpacity 
-        style={styles.showAllButton}
-        activeOpacity={0.7}
-      >
-        <Text style={styles.showAllText}>Show all</Text>
-        <Feather name="chevron-down" size={24} color="#1830AC" />
-      </TouchableOpacity>
+      {services.length > 8 && (
+        <TouchableOpacity 
+          style={styles.showAllButton}
+          onPress={() => setShowAll(!showAll)}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.showAllText}>
+            {showAll ? 'Show less' : 'Show all'}
+          </Text>
+          <Feather 
+            name={showAll ? "chevron-up" : "chevron-down"} 
+            size={24} 
+            color="#1830AC" 
+          />
+        </TouchableOpacity>
+      )}
     </View>
   )
 }
@@ -120,23 +139,20 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
   },
-
   serviceText: {
     fontFamily: 'intermedium',
     fontSize: 14,
     color: '#000000',
     fontWeight: '500',
     textAlign: 'center',
-    lineHeight: 14,
+    lineHeight: 16,
   },
-
   showAllButton: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 8,
   },
-
   showAllText: {
     fontFamily: 'intersemibold',
     fontSize: 14,
