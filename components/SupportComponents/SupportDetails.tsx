@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
 
   arrowIcon: {
     width: 20,
-    height: 40,
+    height: 20,
   },
 
   divider: {

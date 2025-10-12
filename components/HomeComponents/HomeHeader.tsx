@@ -13,7 +13,7 @@ export default function HomeHeader() {
   
   return (
     <SafeAreaView style={styles.container}> 
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="dark-content" backgroundColor="white"/>
       <View style={styles.row}>
         <View style={styles.userSection}>
           <TouchableOpacity onPress={goToProfile}>
@@ -60,7 +60,8 @@ export default function HomeHeader() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    paddingTop: Platform.OS === 'android' ? 10 : 0,
+    paddingTop: Platform.OS === 'android' ?  10 : 0,
+
   },
 
   row: {
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingVertical: Platform.OS === 'ios'? 10:0,
   },
 
   userSection: {

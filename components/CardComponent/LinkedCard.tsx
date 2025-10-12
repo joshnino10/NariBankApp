@@ -1,15 +1,17 @@
 import { useRouter } from 'expo-router'
 import React from 'react'
-import { Image, StyleSheet, View } from 'react-native'
+import { Image, StyleSheet, View, Dimensions } from 'react-native'
 import SmallButton from '../CustomButton/SmallButton'
+
+const { width, height } = Dimensions.get('window')
 
 export default function LinkedCard() {
     const router = useRouter()
 
     const gotoAddCards = ()=> {
         router.push('/adding cards/addcard')
-
     }
+    
   return (
     <View style={styles.container}>
         <View style={styles.cardsContainer}>
@@ -26,14 +28,13 @@ export default function LinkedCard() {
         </View>
         <View style={styles.btnContainer}>
             <SmallButton  
-            onPress={gotoAddCards}
-            textStyle={{
-                fontFamily: 'intersemibold',
-                fontWeight: '600',
-                fontSize:20     
-            }}
+              onPress={gotoAddCards}
+              textStyle={{
+                  fontFamily: 'intersemibold',
+                  fontWeight: '600',
+                  fontSize: 20     
+              }}
               title='+ Add card'
-           
             />
         </View>
     </View>
@@ -50,12 +51,11 @@ const styles = StyleSheet.create({
         gap: 20
     },
     cardImage: {
-        width: 380,
-        height: 200
+        width: width * 0.9, // 90% of screen width
+        height: height * 0.23, // 23% of screen height
     },
     btnContainer: {
         alignSelf: 'center',
         marginTop: 25
     },
-  
 })
