@@ -1,5 +1,6 @@
 import CustomSplashScreen1 from "@/components/CustomSplashScreen1/CustomSplashScreen1";
 import CustomSplashScreen2 from "@/components/CustomSplashScreen2/CustomSplashScreen2";
+import { GlobalProvider } from '@/context/GlobalContext';
 import { ArchivoBlack_400Regular, } from "@expo-google-fonts/archivo-black";
 import {
   Inter_100Thin,
@@ -15,7 +16,6 @@ import {
 import { Stack } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
-import { GlobalProvider } from '@/context/GlobalContext';
 
 
 SplashScreen.preventAutoHideAsync();
@@ -69,9 +69,9 @@ export default function RootLayout() {
   
   return (
     <GlobalProvider>
-     <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="index" />
-      <Stack.Screen name="login" />
+     <Stack screenOptions={{ headerShown: false,}}>
+      <Stack.Screen name="index" options={{gestureEnabled:false}} />
+      <Stack.Screen name="login"options={{gestureEnabled:false}} />
       <Stack.Screen name="createaccount" />
       <Stack.Screen name="verifyemail" />
       <Stack.Screen name="enterid" />
