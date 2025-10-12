@@ -1,18 +1,18 @@
-import {
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Alert,
-  Dimensions,
-  Platform,
-} from "react-native";
-import React, { useState } from "react";
 import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import * as Clipboard from 'expo-clipboard';
+import React, { useState } from "react";
+import {
+  Alert,
+  Dimensions,
+  Image,
+  ImageBackground,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const { width, height } = Dimensions.get('window')
 
@@ -86,7 +86,7 @@ export default function AccountBalance() {
 const styles = StyleSheet.create({
   box: {
     width: width * 0.94,
-    height: Platform.OS === 'android'? height * 0.20: height * 0.16,
+    height: Platform.OS === 'android'? height * 0.18: height * 0.16,
     backgroundColor: "#1A35BD",
     borderTopRightRadius: 15,
     borderBottomRightRadius: 15,
