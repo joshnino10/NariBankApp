@@ -1,7 +1,9 @@
 import * as ImagePicker from 'expo-image-picker'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
-import { Alert, Image, Platform, Pressable, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View, Pressable } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { StatusBar } from 'expo-status-bar'
 
 export default function ProfileHeader() {
   const [profileImage, setProfileImage] = useState(require('../../assets/images/bigProfileImage.png'))
@@ -35,55 +37,56 @@ export default function ProfileHeader() {
   const AccountName = 'PETER SWIFT'
 
   return (
-    <SafeAreaView style={styles.safearea}>
-      <StatusBar barStyle="light-content" backgroundColor="#1A35BD" />
-      <View style={styles.content}>
-        <View style={styles.header}>
-          <TouchableOpacity 
-            onPress={goBack}
-            accessibilityLabel="Go back"
-            accessibilityRole="button"
-          >
-            <Image 
-              style={styles.icon} 
-              source={require('../../assets/images/arrowBackWhite.png')}
-            />
-          </TouchableOpacity>
-          <Text style={styles.profileText}>Profile</Text>
-          <View style={styles.icon} />
-        </View>
-
-        <View style={styles.profileImageContainer}>
-          <View style={styles.imageCircle}>
+    <>
+      <StatusBar style="light" backgroundColor="#1A35BD" />
+      <SafeAreaView style={styles.safearea} edges={['top']}>
+        <View style={styles.content}>
+          <View style={styles.header}>
             <TouchableOpacity 
-              onPress={handleImagePick}
-              accessibilityLabel="Change profile picture"
-              accessibilityRole="imagebutton"
+              onPress={goBack}
+              accessibilityLabel="Go back"
+              accessibilityRole="button"
             >
               <Image 
-                style={styles.profileImage}
-                source={profileImage}
+                style={styles.icon} 
+                source={require('../../assets/images/arrowBackWhite.png')}
               />
             </TouchableOpacity>
+            <Text style={styles.profileText}>Profile</Text>
+            <View style={styles.icon} />
           </View>
 
-          <Text style={styles.accountName}>{AccountName}</Text>
-          <Pressable 
-            accessibilityLabel="Show account details"
-            accessibilityRole="button"
-          >
-            <Text style={styles.showDetails}>Show Details</Text>
-          </Pressable>
+          <View style={styles.profileImageContainer}>
+            <View style={styles.imageCircle}>
+              <TouchableOpacity 
+                onPress={handleImagePick}
+                accessibilityLabel="Change profile picture"
+                accessibilityRole="imagebutton"
+              >
+                <Image 
+                  style={styles.profileImage}
+                  source={profileImage}
+                />
+              </TouchableOpacity>
+            </View>
+
+            <Text style={styles.accountName}>{AccountName}</Text>
+            <Pressable 
+              accessibilityLabel="Show account details"
+              accessibilityRole="button"
+            >
+              <Text style={styles.showDetails}>Show Details</Text>
+            </Pressable>
+          </View>
         </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </>
   )
 }
 
 const styles = StyleSheet.create({
   safearea: {
     backgroundColor: '#1A35BD',
-    paddingTop: Platform.OS === "android" ? 10 : 0
   },
   content: {
     paddingHorizontal: 16,
@@ -93,7 +96,6 @@ const styles = StyleSheet.create({
     width: 20,
     height: 40
   },
-
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',

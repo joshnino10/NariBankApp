@@ -3,12 +3,14 @@ import AdditionalService from '@/components/HomeComponents/AdditionalService'
 import SportDeals from '@/components/HomeComponents/SportDeals'
 import Transaction from '@/components/TransactionDetails/Transaction'
 import React from 'react'
-import { Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, } from 'react-native'
+import { Platform, SafeAreaView, ScrollView,  StyleSheet, } from 'react-native'
+import { StatusBar } from 'expo-status-bar';
 
 export default function Home() {
   return (
     <SafeAreaView style={styles.safearea}>
-      <StatusBar barStyle="dark-content" backgroundColor="white" />
+      <StatusBar style='dark' backgroundColor='white'/>
+     
       <ScrollView>
         <AccountBalance/>
         <Transaction/>

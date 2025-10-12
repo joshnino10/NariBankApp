@@ -1,23 +1,21 @@
 import LinkedCard from '@/components/CardComponent/LinkedCard'
 import React from 'react'
-import { Platform, SafeAreaView, StatusBar, StyleSheet } from 'react-native'
-
+import { Platform, SafeAreaView, StyleSheet, StatusBar as RNStatusBar } from 'react-native'
+import { StatusBar } from 'expo-status-bar';
 
 export default function Card() {
   return (
     <SafeAreaView style={styles.safearea}>
-      <StatusBar barStyle="dark-content" backgroundColor="white" />
+       <StatusBar style='dark' backgroundColor='white'/>
       <LinkedCard/>
-
     </SafeAreaView>
-   
   )
 }
 
 const styles = StyleSheet.create({
   safearea:{
-    flex:1,
-    backgroundColor:"white",
-    paddingTop: Platform.OS === 'android'? StatusBar.currentHeight:0
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop: Platform.OS === 'android' ? RNStatusBar.currentHeight : 0
   },
 })

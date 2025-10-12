@@ -13,7 +13,7 @@ export default function HomeHeader() {
   
   return (
     <SafeAreaView style={styles.container}> 
-        <StatusBar barStyle="dark-content" backgroundColor="white"/>
+        <StatusBar barStyle="dark-content" backgroundColor="#fff"/>
       <View style={styles.row}>
         <View style={styles.userSection}>
           <TouchableOpacity onPress={goToProfile}>

@@ -1,5 +1,6 @@
-import { useRouter } from "expo-router";
-import React, { useRef, useState, useEffect } from "react";
+import { useRouter, } from "expo-router";
+import { StatusBar } from 'expo-status-bar';
+import React, { useEffect, useRef, useState } from "react";
 import {
   Dimensions,
   FlatList,
@@ -114,6 +115,8 @@ export default function OnboardingScreen() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      <StatusBar style="dark" backgroundColor="white" />
+      
       {/* Logo */}
       <View style={styles.logoContainer}>
         <Image
