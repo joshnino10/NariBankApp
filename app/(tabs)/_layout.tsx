@@ -4,7 +4,7 @@ import ProfileHeader from "@/components/ProfileComponent/ProfileHeader";
 import SupportHeader from "@/components/SupportComponents/SupportHeader";
 import { Tabs, usePathname } from "expo-router";
 import React, { useEffect, useState } from "react";
-import { Image, Platform, StatusBar, View } from "react-native";
+import { Image, Platform, StatusBar } from "react-native";
 
 export default function Tablayout() {
   const pathname = usePathname();
@@ -29,17 +29,11 @@ export default function Tablayout() {
 
   return (
     <>
-      {/* StatusBar background for iOS */}
-      <View style={{ 
-        backgroundColor: statusBarConfig.backgroundColor,
-        height: Platform.OS === 'ios' ? 44 : StatusBar.currentHeight 
-      }}>
-        <StatusBar 
-          barStyle={statusBarConfig.barStyle} 
-          backgroundColor={statusBarConfig.backgroundColor}
-          translucent={false}
-        />
-      </View>
+      <StatusBar 
+        barStyle={statusBarConfig.barStyle} 
+        backgroundColor={statusBarConfig.backgroundColor}
+        translucent={false}
+      />
       
       <Tabs
         screenOptions={{
