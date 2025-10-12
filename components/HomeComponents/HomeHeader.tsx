@@ -1,11 +1,11 @@
 import { useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { StatusBar } from 'expo-status-bar';
 
 export default function HomeHeader() {
-  const Name = 'PETER';
+  const Name = 'Joshua';
   const router = useRouter();
 
   const goToProfile = () => {
