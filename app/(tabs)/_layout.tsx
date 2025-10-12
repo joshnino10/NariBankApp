@@ -22,7 +22,7 @@ export default function Tablayout() {
     } else {
       setStatusBarConfig({
         barStyle: 'dark-content',
-        backgroundColor: '#fff'
+        backgroundColor: 'black'
       });
     }
   }, [pathname]);
@@ -32,7 +32,7 @@ export default function Tablayout() {
       <StatusBar 
         barStyle={statusBarConfig.barStyle} 
         backgroundColor={statusBarConfig.backgroundColor}
-        translucent={false}
+       
       />
       
       <Tabs

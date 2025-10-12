@@ -36,7 +36,7 @@ export default function ProfileHeader() {
 
   return (
     <SafeAreaView style={styles.safearea}>
-        <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="light-content" backgroundColor="#1A35BD" />
       <View style={styles.content}>
         <View style={styles.header}>
           <TouchableOpacity 
