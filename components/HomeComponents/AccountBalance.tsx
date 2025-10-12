@@ -15,7 +15,7 @@ import {
   
   export default function AccountBalance() {
     
-    const Amount = "500,000.00";
+    const Amount = "5,000,000.00";
     const AccountNumber = "0715334703";
     const AltAccountNumber = "9126794670";
     

@@ -1,6 +1,7 @@
 import AccountBalance from '@/components/HomeComponents/AccountBalance'
 import AdditionalService from '@/components/HomeComponents/AdditionalService'
 import SportDeals from '@/components/HomeComponents/SportDeals'
+import Transaction from '@/components/TransactionDetails/Transaction'
 import React from 'react'
 import { Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, } from 'react-native'
 
@@ -10,6 +11,7 @@ export default function Home() {
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       <ScrollView>
         <AccountBalance/>
+        <Transaction/>
         <AdditionalService/>
         <SportDeals/>
 
