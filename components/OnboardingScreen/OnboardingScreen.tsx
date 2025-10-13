@@ -69,7 +69,7 @@ export default function OnboardingScreen() {
     router.replace('/login');
   };
   const goToCreateAccount = () => {
-    router.push("/create account/createaccount");
+    router.replace("/create account/createaccount");
   };
 
   const renderTextParts = (parts, style) => {
