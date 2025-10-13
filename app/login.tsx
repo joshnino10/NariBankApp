@@ -33,7 +33,7 @@ export default function Login() {
         <View style={styles.page}>
           <View>
             <View style={styles.logoContainer}>
-              <Image style={styles.logo} source={require('../../assets/images/small logo.png')}/>
+              <Image style={styles.logo} source={require('../assets/images/small logo.png')}/>
               <Text style={styles.logoText}>Nari</Text>
             </View>
 
