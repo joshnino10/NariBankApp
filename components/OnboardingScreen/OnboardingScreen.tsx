@@ -66,7 +66,7 @@ export default function OnboardingScreen() {
   }, []);
 
   const goToLogin = () => {
-    router.push("/login/login");
+    router.push('/login');
   };
   const goToCreateAccount = () => {
     router.push("/create account/createaccount");
