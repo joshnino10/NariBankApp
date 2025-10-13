@@ -20,7 +20,7 @@ export default function AdditionalService() {
       id: '1',
       icon: require('../../assets/images/to nari icon.png'),
       text: 'To Nari',
-      route: '/to nari/index',
+      route: '/to_nari/index',
       isVisible: true,
     },
 
