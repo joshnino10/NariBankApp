@@ -1,12 +1,12 @@
+import SmallButton from '@/components/CustomButton/SmallButton'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { Image, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View, Alert, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { Alert, Image, Keyboard, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import { OtpInput } from 'react-native-otp-entry'
-import SmallButton from '@/components/CustomButton/SmallButton'
 
-export default function Loginpin() {
-    const [pin, setPin] = useState('')
-    const [confirmPin, setConfirmPin] = useState('')
+export default function Transactionpin() {
+    const [transactionpin, setTransactionPin] = useState('')
+    const [confirmTransactionPin, setConfirmTransactionPin] = useState('')
 
     const router = useRouter()
     
@@ -15,21 +15,21 @@ export default function Loginpin() {
     }
 
     const handleNext = () => {
-        if (pin.length !== 6) {
-            Alert.alert('Error', 'Please enter a 6-digit PIN')
+        if (transactionpin.length !== 4) {
+            Alert.alert('Error', 'Please enter a 4-digit PIN')
             return
         }
-        if (confirmPin.length !== 6) {
+        if (confirmTransactionPin.length !== 4) {
             Alert.alert('Error', 'Please confirm your PIN')
             return
         }
-        if (pin !== confirmPin) {
+        if (transactionpin !== confirmTransactionPin) {
             Alert.alert('Error', 'PINs do not match. Please try again.')
             return
         }
         // Navigate to next screen or save PIN
-        console.log('PIN set successfully:', pin)
-        router.push('/pin/transactionpin')
+        console.log('PIN set successfully:', transactionpin)
+        router.replace('/accountcreated')
     }
 
     return (
@@ -38,21 +38,22 @@ export default function Loginpin() {
                 <View style={styles.page}>
                     <View>
                         <TouchableOpacity onPress={goBack}>
-                            <Image style={styles.back} source={require('../../assets/images/arrowBack.png')}/>
+                            <Image style={styles.back} source={require('../assets/images/arrowBack.png')}/>
                         </TouchableOpacity>
 
                         <View style={styles.titlecontainer}>
-                            <Text style={styles.title}>Set Your 6-Digit Login PIN</Text>
-                            <Text style={styles.desc}>Your PIN should contain numbers which cannot be repeated or consecutive</Text>
+                            <Text style={styles.title}>Set Transaction PIN</Text>
+                            <Text style={styles.desc}>Your 4-digit transaction PIN secures your transaction. Please do not share with anyone</Text>
                         </View>
 
                         <View style={styles.inputContainer}>
                             <Text style={styles.label}>Set PIN</Text>
                             <OtpInput
-                                numberOfDigits={6}
-                                onTextChange={setPin}
+                                numberOfDigits={4}
+                                onTextChange={setTransactionPin}
+                                value = {transactionpin}
                                 placeholder="•"
-                                value={pin}
+                                secureTextEntry={true}
                                 theme={{
                                     containerStyle: styles.otpContainer,
                                     pinCodeContainerStyle: styles.pinCodeContainer,
@@ -63,10 +64,11 @@ export default function Loginpin() {
 
                             <Text style={styles.label}>Confirm PIN</Text>
                             <OtpInput
-                                numberOfDigits={6}
-                                onTextChange={setConfirmPin}
-                                 placeholder="•"
-                                value={confirmPin}
+                                numberOfDigits={4}
+                                onTextChange={setConfirmTransactionPin}
+                                placeholder="•"
+                                value = {confirmTransactionPin}
+                                secureTextEntry={true}
                                 theme={{
                                     containerStyle: styles.otpContainer,
                                     pinCodeContainerStyle: styles.pinCodeContainer,
@@ -78,10 +80,9 @@ export default function Loginpin() {
 
                     <View style={styles.buttonContainer}>
                         <SmallButton onPress={handleNext} title='Next'/>
-                      
-                        
                     </View>
                     </View>
+
 
                 </View>
             </SafeAreaView>
@@ -118,17 +119,17 @@ const styles = StyleSheet.create({
     desc: {
         fontFamily: 'interregular',
         textAlign: 'center',
-        fontSize: 18,
-        color: '#000000',
+        fontSize: 16,
+        color: '#666',
         paddingHorizontal: 20
     },
     inputContainer: {
         marginTop: 40
     },
     label: {
-        fontSize: 18,
+        fontSize: 16,
         fontFamily: 'interregular',
-        fontWeight: '400',
+        fontWeight: '500',
         color: '#000000',
         marginBottom: 10,
         marginTop: 20
@@ -151,11 +152,8 @@ const styles = StyleSheet.create({
     focusStick: {
         backgroundColor: '#4361EE'
     },
-    buttonContainer:{
-        marginTop:30,
+    buttonContainer: {
+        marginTop: 30,
         alignItems: 'center'
-
-    },
-
-    
+    }
 })

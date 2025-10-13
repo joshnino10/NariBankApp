@@ -28,7 +28,7 @@ export default function accountcreated() {
             <View style={styles.container}>
               <Animated.Image 
                 style={[styles.icon, { transform: [{ translateY: bounceAnim }] }]} 
-                source={require('../../assets/images/account success.png')}
+                source={require('../assets/images/account success.png')}
               />
               <Text style={styles.title}>You’ve successfully created an account !</Text>
             </View>

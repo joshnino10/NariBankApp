@@ -26,7 +26,7 @@ import { useRouter } from "expo-router";
     const router = useRouter()
 
     const gotoLoginPin = ()=>{
-        router.push('/pin/loginpin')
+        router.push('/loginpin')
     }
   
     return (
