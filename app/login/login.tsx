@@ -17,6 +17,7 @@ export default function Login() {
     console.log('Login with PIN:', pin)
     router.replace('/(tabs)/home')
    
+   
   
   }
 

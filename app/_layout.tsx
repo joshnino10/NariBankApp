@@ -69,9 +69,10 @@ export default function RootLayout() {
   
   return (
     <GlobalProvider>
-     <Stack screenOptions={{ headerShown: false,}}>
-      <Stack.Screen name="index" options={{gestureEnabled:false}} />
-      <Stack.Screen name="login"options={{gestureEnabled:false}} />
+     <Stack screenOptions={{ headerShown: false,gestureEnabled:false
+     }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="login" />
       <Stack.Screen name="createaccount" />
       <Stack.Screen name="verifyemail" />
       <Stack.Screen name="enterid" />
