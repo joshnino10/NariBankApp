@@ -1,7 +1,7 @@
+import { Feather } from '@expo/vector-icons'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View, Image, Alert } from 'react-native'
-import { Feather } from '@expo/vector-icons'
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 interface Service {
   id: string
@@ -20,9 +20,10 @@ export default function AdditionalService() {
       id: '1',
       icon: require('../../assets/images/to nari icon.png'),
       text: 'To Nari',
-      route: '/to nari/tonari',
+      route: '/to nari/index',
       isVisible: true,
     },
+
     {
       id: '2',
       icon: require('../../assets/images/bank icon.png'),
