@@ -14,7 +14,7 @@ export default function AccountGenerated() {
 
   const router = useRouter()
 
-  const gotoHome = ()=>{
+  const gotoHome = () => {
     router.replace('/(tabs)/home')
   }
 
