@@ -14,7 +14,7 @@ export default function SuccessDetails() {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {/* ✅ Animation Section */}
+     
         <View style={styles.animationContainer}>
           <LottieView
             source={require("../../assets/lottie/Success.json")}
