@@ -11,9 +11,6 @@ export default function ErrorDetails() {
     const goBack = ()=>{
         router.replace('/nari bank/review1')
     }
-
-
-
   return (
     <View style={styles.container}>
       <View style={styles.contentSection}>
