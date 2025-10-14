@@ -29,12 +29,21 @@ export default function Narilayout() {
             header: ()=> <SafeHeader title='Transfer to Nari'/>
         }}/>
 
+        <Stack.Screen name='review1' options={{
+            header: ()=> <SafeHeader title='Transfer to Nari'/>
+        }}/>
 
-        <Stack.Screen name='nair'
-        options={{
-            header:()=> <SafeHeader title='Transfer to Nari'/>
-        }}
-          />
+        <Stack.Screen name='success' options={{
+            headerShown:false
+           
+        }}/>
+
+        <Stack.Screen name='error' options={{
+            headerShown:false
+           
+        }}/>
+
+
       
     </Stack>
   )
