@@ -27,7 +27,7 @@ export default function TransferToNari() {
     }
 
     const goToPay = () => {
-        if (!recipientNumber.trim() || !amount.trim() || !narration.trim()) {
+        if (!recipientNumber.trim() || !amount.trim()) {
             Alert.alert(
                 'Missing Information',
                 'Please fill all fields before proceeding',
