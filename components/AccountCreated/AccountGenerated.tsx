@@ -9,10 +9,6 @@ export default function AccountGenerated() {
     return `₦${Number(amount).toLocaleString()}`;
   };
 
- 
-
-
-
   return (
     <View style={styles.container}>
       <View style={styles.contents}>

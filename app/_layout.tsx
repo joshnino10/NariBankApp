@@ -44,7 +44,6 @@ export default function RootLayout() {
   useEffect(() => {
     if (loaded) {
       const timer1 = setTimeout(() => setCurrentSplash(2), 2500);
-
       const timer2 = setTimeout(() => setCurrentSplash(0), 6000);
 
 
@@ -69,7 +68,7 @@ export default function RootLayout() {
   
   return (
     <GlobalProvider>
-     <Stack screenOptions={{ headerShown: false, gestureEnabled:false}}>
+     <Stack screenOptions={{ headerShown: false}}>
       <Stack.Screen name="index" />
       <Stack.Screen name="login" />
       <Stack.Screen name="createaccount" />
