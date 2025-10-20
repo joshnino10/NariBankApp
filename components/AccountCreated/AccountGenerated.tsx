@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { generateaAccount } from "./GenerateAccount";
-import SmallButton from "../CustomButton/SmallButton";
 import { useRouter } from "expo-router";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import SmallButton from "../CustomButton/SmallButton";
+import { generateaAccount } from "./GenerateAccount";
 
 export default function AccountGenerated() {
   const formatNaira = (amount: string | number) => {
@@ -12,11 +12,9 @@ export default function AccountGenerated() {
     return `₦${Number(amount).toLocaleString()}`;
   };
 
-  const router = useRouter()
+ 
 
-  const gotoHome = () => {
-    router.replace('/(tabs)/home')
-  }
+
 
   return (
     <View style={styles.container}>
@@ -49,9 +47,7 @@ export default function AccountGenerated() {
         ))}
       </View>
 
-      <View style={styles.buttonContainer}>
-        <SmallButton onPress={gotoHome} title="Start Nari" />
-      </View>
+     
     </View>
   );
 }
@@ -115,8 +111,5 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: "#000",
   },
-  buttonContainer: {
-    marginTop: 30,
-    alignSelf: "center",
-  },
+
 });

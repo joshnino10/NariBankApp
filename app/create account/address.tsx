@@ -88,7 +88,7 @@ export default function Address() {
             </TouchableOpacity>
 
             <View style={styles.titleContainer}>
-              <Text style={styles.title}>What's your Residential Address?</Text>
+              <Text style={styles.title}>What’s your Residential Address?</Text>
               <Text style={styles.description}>
                 Kindly provide your complete residential address
               </Text>

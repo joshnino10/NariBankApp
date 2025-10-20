@@ -69,7 +69,7 @@ export default function RootLayout() {
   
   return (
     <GlobalProvider>
-     <Stack screenOptions={{ headerShown: false,}}>
+     <Stack screenOptions={{ headerShown: false, gestureEnabled:false}}>
       <Stack.Screen name="index" />
       <Stack.Screen name="login" />
       <Stack.Screen name="createaccount" />
@@ -81,7 +81,7 @@ export default function RootLayout() {
       <Stack.Screen name="nationality" />
       <Stack.Screen name="loginpin" />
       <Stack.Screen name="transactionpin" />
-      <Stack.Screen name="accountcreated" />
+      <Stack.Screen name="accountcreated" options={{gestureEnabled:false}} />
       <Stack.Screen name="addcard" />
     </Stack>
     </GlobalProvider>
