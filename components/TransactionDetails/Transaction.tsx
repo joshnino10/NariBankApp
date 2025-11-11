@@ -1,4 +1,4 @@
-import { Feather } from '@expo/vector-icons'
+// import { Feather } from '@expo/vector-icons'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import React, { useState } from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
@@ -60,15 +60,7 @@ export default function Transaction() {
           ))}
         </View>
 
-        {transactions.length > 3 && (
-          <TouchableOpacity 
-            style={styles.editButton}
-            activeOpacity={0.7}
-          >
-            <Feather name="edit-2" size={18} color="#4F46E5" />
-            <Text style={styles.editText}>Edit</Text>
-          </TouchableOpacity>
-        )}
+      
       </View>
     </View>
   )
