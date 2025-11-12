@@ -5,6 +5,7 @@ export default function Wallet() {
   return (
     <SafeAreaView>
         <View>
+          <Text>hi</Text>
 
         </View>
      

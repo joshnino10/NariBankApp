@@ -3,16 +3,17 @@ import React, { useState } from 'react'
 import { Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native'
 import CustomButton from '../CustomButton/CustomButton'
 import CustomInput from '../CustomInput/CustomInput'
+import SplitPaymentModal from '../SplitPaymentModal/SplitPaymentModal'
 
 export default function TransferToNari() {
     const [recipientNumber, setRecipientNumber] = useState('')
     const [amount, setAmount] = useState('')
     const [narration, setNarration] = useState('')
+    const [modalVisible, setModalVisible] = useState(false)
 
     const router = useRouter()
 
     const formatAmount = (value: string) => {
-      
         const numericValue = value.replace(/[^0-9]/g, '')
         
         if (numericValue) {
@@ -36,6 +37,10 @@ export default function TransferToNari() {
             return
         }
         router.push('/nari bank/review1')
+    }
+
+    const handleSplitPayment = () => {
+        setModalVisible(true)
     }
 
   return (
@@ -75,7 +80,7 @@ export default function TransferToNari() {
 
                 <View style={{marginTop: 25, gap: 20}}>
                     <CustomButton 
-                    onPress={()=> router.back()}
+                        onPress={handleSplitPayment}
                         style={{backgroundColor: 'white', borderWidth: 2, borderColor: "#1A35BD"}}
                         title='Split Payment'
                         textStyle={{color: '#000000', fontSize: 18, fontWeight: "600", fontFamily: "intersemibold"}}
@@ -89,6 +94,11 @@ export default function TransferToNari() {
                 </View>
             </View>
         </ScrollView>
+
+        <SplitPaymentModal 
+            visible={modalVisible}
+            onClose={() => setModalVisible(false)}
+        />
     </KeyboardAvoidingView>
   )
 }

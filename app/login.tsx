@@ -1,11 +1,25 @@
 import CustomButton from '@/components/CustomButton/CustomButton'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { Alert, Image, Keyboard, Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+import {
+  ActivityIndicator,
+  Alert,
+  Image,
+  Keyboard,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View
+} from 'react-native'
 import { OtpInput } from 'react-native-otp-entry'
 
 export default function Login() {
   const [pin, setPin] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
   const handleLogin = () => {
@@ -13,12 +27,15 @@ export default function Login() {
       Alert.alert('Error', 'Please enter your 6-digit PIN')
       return
     }
-    // Validate PIN here
+    
+    // Start loading
+    setIsLoading(true)
     console.log('Login with PIN:', pin)
-    router.replace('/(tabs)/home')
-   
-   
-  
+
+    setTimeout(() => {
+      setIsLoading(false)
+      router.replace('/(tabs)/home')
+    }, 3000)
   }
 
   const handleForgotPin = () => {
@@ -46,8 +63,9 @@ export default function Login() {
                 numberOfDigits={6}
                 value={pin}
                 onTextChange={setPin}
-                 placeholder="•"
+                placeholder="•"
                 secureTextEntry={true}
+                disabled={isLoading}
                 theme={{
                   containerStyle: styles.otpContainer,
                   pinCodeContainerStyle: styles.pinCodeContainer,
@@ -56,16 +74,26 @@ export default function Login() {
                 }}
               />
               
-              <TouchableOpacity onPress={handleForgotPin} style={styles.forgotPinButton}>
+              <TouchableOpacity 
+                onPress={handleForgotPin} 
+                style={styles.forgotPinButton}
+                disabled={isLoading}
+              >
                 <Text style={styles.forgotPinText}>Forgot PIN?</Text>
               </TouchableOpacity>
             </View>
 
-          <View style={styles.buttonContainer}>
-            <CustomButton title='Login' onPress={handleLogin}/>
+            <View style={styles.buttonContainer}>
+              {isLoading ? (
+                <View style={styles.loadingContainer}>
+                  <ActivityIndicator size="large" color="#1A35BD" />
+                  <Text style={styles.loadingText}>Logging in...</Text>
+                </View>
+              ) : (
+                <CustomButton title='Login' onPress={handleLogin}/>
+              )}
+            </View>
           </View>
-          </View>
-
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
@@ -81,7 +109,6 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     paddingHorizontal: 16
-
   },
   logoContainer: {
     marginTop: 10,
@@ -141,9 +168,19 @@ const styles = StyleSheet.create({
     fontFamily: 'intersemibold',
     color: '#1A35BD',
     justifyContent:'flex-end',
- 
   },
   buttonContainer: {
     marginTop: 30
+  },
+  loadingContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20
+  },
+  loadingText: {
+    marginTop: 12,
+    fontSize: 16,
+    fontFamily: 'intersemibold',
+    color: '#1A35BD'
   }
 })
