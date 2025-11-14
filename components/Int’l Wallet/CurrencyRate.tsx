@@ -19,7 +19,7 @@ export default function CurrencyRate() {
         </View>
       </View>
 
-      <View style={{marginTop:15}}>
+      <View style={{marginTop:15, borderRadius:30}}>
         {currrencyData.map((item, index)=>(
           <TouchableOpacity style={styles.Currencies} key={index}>
             <View style={{flexDirection:'row', alignItems:'flex-end', gap:5}}>
@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
 
   Currencies: {
     borderWidth: 1,
+
     paddingHorizontal: 15,
     paddingVertical: 18,
   },
