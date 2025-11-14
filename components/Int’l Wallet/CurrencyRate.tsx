@@ -22,14 +22,25 @@ export default function CurrencyRate() {
       <View style={{marginTop:15, borderRadius:30}}>
         {currrencyData.map((item, index)=>(
           <TouchableOpacity style={styles.Currencies} key={index}>
+            <View style={styles.row}>
+
             <View style={{flexDirection:'row', alignItems:'flex-end', gap:5}}>
               <Image style={styles.Flag} source={item.Icon}/>
               <Text style={styles.code}>{item.code}</Text>
             </View>
 
             <View>
+              <View style={{flexDirection:'row', gap:5, alignItems:'center'}}>
+              <Image style={{width:24, height:24}} source={require('../../assets/images/currencyicon.png')}/>
+               <Text style={styles.exchangerate}>{item.ExchangeRate}</Text>
+              </View>
+              <View>
+                  <Text>{item.isPositive}</Text>
+                  <Text>{item.percentage}</Text>
+              </View>
                 
 
+            </View>
             </View>
           </TouchableOpacity>
         ))}
@@ -73,9 +84,14 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
 
-  Currencies: {
-    borderWidth: 1,
+  row:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center'
 
+  },
+
+  Currencies: {
     paddingHorizontal: 15,
     paddingVertical: 18,
   },
@@ -90,6 +106,13 @@ const styles = StyleSheet.create({
     fontWeight:'600',
     color:'#000000',
     fontSize:16
+
+  },
+  exchangerate:{
+    fontWeight:'600',
+    fontSize:16,
+    fontFamily:'intermedium',
+    color: '#000000'
 
   },
 });
