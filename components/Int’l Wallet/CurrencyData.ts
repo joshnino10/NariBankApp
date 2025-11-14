@@ -50,4 +50,6 @@ export const currrencyData = [
         percentage: '22.1%'
     },
 
+ 
+
 ]

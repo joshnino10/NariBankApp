@@ -18,19 +18,19 @@ export default function CurrencyRate() {
         </TouchableOpacity>
       </View>
 
-      {/* ---- Currency container with border (like screenshot) ---- */}
+
       <View style={styles.currencyBox}>
         {currrencyData.map((item) => (
           <TouchableOpacity style={styles.Currencies} key={item.code}>
             <View style={styles.row}>
 
-              {/* LEFT SECTION (flag + code) */}
+            
               <View style={styles.leftSection}>
                 <Image style={styles.Flag} source={item.Icon} />
                 <Text style={styles.code}>{item.code}</Text>
               </View>
 
-              {/* RIGHT SECTION (rate + percentage) */}
+             
               <View>
                 <View style={styles.rateRow}>
                   <Image
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     marginLeft: 6,
   },
 
-  /* ---- NEW BORDER BOX AROUND CURRENCY LIST ---- */
+  
   currencyBox: {
     marginTop: 20,
     borderWidth: 1,
