@@ -10,9 +10,8 @@ export default function Wallet() {
           entering={BounceInDown.duration(1000)} 
           exiting={FadeOut.duration(100)}
            >
-          <InternationalWallet/>
-          
-
+             <InternationalWallet/>
+        
         </Animated.View>
      
     </SafeAreaView>
