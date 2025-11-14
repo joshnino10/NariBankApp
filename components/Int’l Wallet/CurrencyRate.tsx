@@ -43,7 +43,7 @@ export default function CurrencyRate() {
                 <View style={styles.trendRow}>
                   <Feather
                     name={item.isPositive ? "arrow-up-right" : "arrow-down-right"}
-                    size={20}
+                    size={24}
                     color={item.isPositive ? "green" : "red"}
                   />
                   <Text style={styles.percentage}>{item.percentage}</Text>
