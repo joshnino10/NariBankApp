@@ -6,11 +6,10 @@ import Feather from '@expo/vector-icons/Feather';
 export default function CurrencyRate() {
   return (
     <View style={styles.contents}>
-      {/* Header */}
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>Currency Rate</Text>
+        <Text style={styles.title}>Current Rate</Text>
 
-        <TouchableOpacity style={styles.swapbtn} activeOpacity={0.7}>
+        <TouchableOpacity style={styles.swapbtn}>
           <Text style={styles.swaptext}>Swap</Text>
           <Image
             style={styles.swapIcon}
@@ -19,19 +18,19 @@ export default function CurrencyRate() {
         </TouchableOpacity>
       </View>
 
-      {/* List */}
-      <View style={styles.listContainer}>
+      {/* ---- Currency container with border (like screenshot) ---- */}
+      <View style={styles.currencyBox}>
         {currrencyData.map((item) => (
-          <TouchableOpacity style={styles.currencyItem} key={item.code} activeOpacity={0.7}>
+          <TouchableOpacity style={styles.Currencies} key={item.code}>
             <View style={styles.row}>
-              
-              {/* Left */}
+
+              {/* LEFT SECTION (flag + code) */}
               <View style={styles.leftSection}>
-                <Image style={styles.flag} source={item.Icon} />
+                <Image style={styles.Flag} source={item.Icon} />
                 <Text style={styles.code}>{item.code}</Text>
               </View>
 
-              {/* Right */}
+              {/* RIGHT SECTION (rate + percentage) */}
               <View>
                 <View style={styles.rateRow}>
                   <Image
@@ -42,10 +41,10 @@ export default function CurrencyRate() {
                 </View>
 
                 <View style={styles.trendRow}>
-                  <Feather 
+                  <Feather
                     name={item.isPositive ? "arrow-up-right" : "arrow-down-right"}
                     size={20}
-                    color={item.isPositive ? "green" : "red"} 
+                    color={item.isPositive ? "green" : "red"}
                   />
                   <Text style={styles.percentage}>{item.percentage}</Text>
                 </View>
@@ -64,17 +63,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginTop: 25,
   },
+
   titleContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
+
   title: {
-    fontFamily: "intersemibold",
-    fontSize: 16,
-    fontWeight: "600",
+    fontSize: 18,
+    fontWeight: "700",
     color: "#000",
   },
+
   swapbtn: {
     backgroundColor: "#1A35BD",
     flexDirection: "row",
@@ -83,68 +84,83 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 10,
   },
+
   swaptext: {
     fontSize: 14,
     color: "#fff",
     fontWeight: "600",
   },
+
   swapIcon: {
     width: 20,
     height: 20,
-    marginLeft: 5,
+    marginLeft: 6,
   },
-  listContainer: {
-    marginTop: 15,
-    borderRadius: 30,
+
+  /* ---- NEW BORDER BOX AROUND CURRENCY LIST ---- */
+  currencyBox: {
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: "#1E1E1E",
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
   },
-  currencyItem: {
-    paddingHorizontal: 15,
+
+  Currencies: {
     paddingVertical: 18,
   },
+
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
+
   leftSection: {
     flexDirection: "row",
-    alignItems: "flex-end",
-    gap: 5,
+    alignItems: "center",
+    gap: 10,
   },
-  flag: {
-    width: 70,
-    height: 52,
+
+  Flag: {
+    width: 60,
+    height: 45,
   },
+
   code: {
-    fontFamily: "intersemibold",
     fontWeight: "600",
-    color: "#000",
     fontSize: 16,
+    color: "#000",
   },
+
   rateRow: {
     flexDirection: "row",
-    gap: 5,
     alignItems: "center",
+    gap: 5,
     marginBottom: 5,
   },
+
   currencyIcon: {
     width: 24,
     height: 24,
   },
+
   exchangerate: {
-    fontWeight: "600",
+    fontWeight: "700",
     fontSize: 16,
-    fontFamily: "intermedium",
     color: "#000",
   },
+
   trendRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 3,
-    marginLeft: 7,
+    gap: 4,
+    marginLeft: 5,
   },
+
   percentage: {
     fontSize: 14,
     fontWeight: "500",
-  }
+  },
 });
