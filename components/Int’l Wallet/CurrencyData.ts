@@ -6,14 +6,16 @@ export const currrencyData = [
         Icon: require('../../assets/images/Canada.png'),
         code:'CAD',
         ExchangeRate: '1,567',
-        isPositive: true
+        isPositive: true,
+        percentage: '22.1%'
     },
 
     {
         Icon: require('../../assets/images/usa.png'),
         code:'USD',
         ExchangeRate: '1,567',
-        isPositive: true
+        isPositive: true,
+        percentage: '22.1%'
     },
 
     {
@@ -21,6 +23,7 @@ export const currrencyData = [
         code:'CNY',
         ExchangeRate: '1,567',
         isPositive: true,
+        percentage: '22.1%'
     },
 
     {
@@ -28,6 +31,7 @@ export const currrencyData = [
         code:'SEK',
         ExchangeRate: '1,567',
         isPositive: false,
+        percentage: '22.1%'
     },
 
     {
@@ -35,6 +39,7 @@ export const currrencyData = [
         code:'RUB',
         ExchangeRate: '1,567',
         isPositive: true,
+        percentage: '22.1%'
     },
 
     {
@@ -42,6 +47,7 @@ export const currrencyData = [
         code:'EUR',
         ExchangeRate: '1,567',
         isPositive: false,
+        percentage: '22.1%'
     },
 
 ]
