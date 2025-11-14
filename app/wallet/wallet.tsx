@@ -1,7 +1,7 @@
-import { SafeAreaView, StyleSheet, View } from 'react-native'
+import { SafeAreaView, StyleSheet,} from 'react-native'
 import React from 'react'
 import InternationalWallet from '@/components/Int’l Wallet/InternationalWallet'
-import Animated, { BounceInDown, FadeInDown, FadeOut } from 'react-native-reanimated';
+import Animated, { BounceInDown,  FadeOut } from 'react-native-reanimated';
 
 export default function Wallet() {
   return (
