@@ -15,9 +15,7 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/nairaicon.png",
-        "backgroundImage": "#ffff",
-        "monochromeImage": "#ffff"
+        "foregroundImage": "./assets/images/nairaicon.png"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
@@ -29,7 +27,7 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/nairaicon.png"
     },
     "plugins": [
       [
